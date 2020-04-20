@@ -1,0 +1,32 @@
+spring:
+  main.allow-bean-definition-overriding: true
+  liquibase.change-log: classpath:liquibase/db/changelog/master.yml
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    platform: mysql
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: jdbc:mysql://${DB_HOST}/export_import?autoReconnect=true&failOverReadOnly=false&maxReconnects=20&useUnicode=true&characterEncoding=UTF-8&createDatabaseIfNotExist=true
+  groovy.template.check-template-location: false
+  application.name: zip-export-import-database-data
+
+springdoc.swagger-ui.path: /swagger-ui.html
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      base-path: ''
+      exposure:
+        include: '*'
+
+admin.importController.enabled: true

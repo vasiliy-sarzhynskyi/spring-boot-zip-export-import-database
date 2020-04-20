@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
+      hibernate.generate_statistics: true
+  datasource:
+    url: jdbc:mysql://${embedded.mariadb.host}:${embedded.mariadb.port}/${embedded.mariadb.schema}
+    username: ${embedded.mariadb.user}
+    password: ${embedded.mariadb.password}
+
+admin.importController.enabled: true

@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: release-0.0.1/create-initial-tables.yml
+      relativeToChangelogFile: true
